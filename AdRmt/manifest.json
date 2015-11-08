@@ -1,0 +1,19 @@
+{
+  "name":"Auto Remove Online Advertise Plugin",
+  "version": "0.1",
+  "manifest_version":"2",
+  "description":"A plugin on browser to remove online advertise automatically",
+  "permission":["http://*/"],
+  "icons":{
+    "16":"icon-16-coco.png",
+    "128":"icon-128-coco.png"
+  },
+  "browser_action":{
+    "default_icon":"icon-16-coco.png",
+    "default_popup":"popup.html"
+  },
+  "content_scripts":[{
+    "matches":["http://*/","https://*/","http://*/*","https://*/*"],
+    "js":["js/jquery-1.11.3.min.js","js/del-ad-script.js"]
+  }]
+}
