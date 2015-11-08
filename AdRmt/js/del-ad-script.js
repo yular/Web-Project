@@ -1,3 +1,5 @@
+$(function() {
+
 var clearAd = {
 	clear:function(){
 		var ad_id_name = [
@@ -61,3 +63,13 @@ var clearAd = {
 		this.findSomeAdPossible();
 	}
 }
+
+        $(document).ready(function() {
+                clearAd.init();
+
+                setTimeout(function() {
+                        clearAd.init();
+                }, 4000)
+        });
+
+})
