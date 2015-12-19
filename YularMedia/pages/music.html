@@ -1,0 +1,45 @@
+<div class="main-window">
+	<div class="container">
+
+		<div class="panel panel-default" id="music-list-panel">
+			<table class="table table-striped table-hover">
+                <thead id="music-list-head">
+                    <tr>
+                        <th col="Music Name" >Music Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="song in songlist" ng-class="{ success: song.id === requestSongSelected }">
+                <!--        <td ng-click="requestHighlight(request.processId)">{{ request.processId }}</td> -->
+                        <td ng-click="requestHighlight(song.id)">{{ song.name }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+	
+		<div class="play-container"> <!-- ng-repeat="music in musiclist"> -->
+		<!--	<div class="row"> -->
+
+			<videogular vg-theme="config.theme">
+				<vg-media vg-type="audio" vg-src="config.sources">
+				</vg-media>
+	 
+				<vg-controls>
+					<vg-play-pause-button></vg-play-pause-button>
+					<vg-time-display>{{ currentTime | date:'mm:ss' }}</vg-time-display>
+					<vg-scrub-bar>
+						<vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+					</vg-scrub-bar>
+					<vg-time-display>{{ timeLeft | date:'mm:ss' }}</vg-time-display>
+					<vg-volume>
+						<vg-mute-button></vg-mute-button>
+						<vg-volume-bar></vg-volume-bar>
+					</vg-volume>
+					<vg-fullscreen-button></vg-fullscreen-button>
+				</vg-controls>
+			</videogular>
+		<!--	</div> -->
+		</div>
+		
+	</div>
+</div>
